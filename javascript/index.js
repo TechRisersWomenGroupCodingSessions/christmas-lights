@@ -14,7 +14,7 @@ class Lights {
 	constructor(across, down) {
 		this.across = across;
 		this.down = down;
-		this.grid = Array(across).fill(Array(down).fill(new Light()));
+		this.grid = Array(across).fill([]).map(row => Array(down).fill(new Light()).map(slot => new Light()));
 	}
 
 	printLights() {
