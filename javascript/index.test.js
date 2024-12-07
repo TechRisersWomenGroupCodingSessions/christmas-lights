@@ -1,4 +1,4 @@
-const { Light, Grid } = require('./index.js');
+const { Light, Lights } = require('./index.js');
 
 test('light starts off', () => {
 	const light = new Light();
@@ -15,17 +15,17 @@ test('grid starts with lights off', () => {
 	expect(newLight2.on).toBe(false);
 });
 
-test('grid builder creates grid with lights off', () => {
+test('grid of lights starts with lights off', () => {
 	const across = 3;
 	const down = 2;
-	const grid = new Grid(across, down);
+	const lights = new Lights(across, down);
 
-	expect(grid.length).toBe(across);
-	expect(grid[0].length).toBe(down);
+	expect(lights.grid.length).toBe(across);
+	expect(lights.grid[0].length).toBe(down);
 
-	for (let i = 0; i < grid.length; i++) {
-		for (let j = 0; j < grid[i].length; j++) {
-			expect(grid[i][j].on).toBe(false);
+	for (let i = 0; i < lights.grid.length; i++) {
+		for (let j = 0; j < lights.grid[i].length; j++) {
+			expect(lights.grid[i][j].on).toBe(false);
 		}
 	}
 });

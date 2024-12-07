@@ -6,11 +6,12 @@ class Light {
 	}
 }
 
-class Grid {
+class Lights {
 	constructor(across, down) {
 		this.across = across;
 		this.down = down;
-		this.lights = Array.from();
+		this.grid = Array(across).fill(Array(down).fill(new Light));
+
 	}
 }
-module.exports = { Light, Grid };
+module.exports = { Light, Lights };
