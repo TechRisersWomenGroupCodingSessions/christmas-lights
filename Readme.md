@@ -14,16 +14,30 @@ Every year, your neighbours outshine you in the Christmas lights competition ðŸ˜
 
 ## Mission
 
-Write a program to decipher Santa's instructions (see `instructions.json`) and display a series of festive shapes on your grid by turning on/off and toggling the light bulbs.
+Write a program to decipher Santa's instructions (see `instructions.json`) and display a series of festive shapes on your grid by turning on/off and toggling the light bulbs. `instructions.json` contains a single shape to be displayed on the grid. It is possible to extend the cata by iterating through the shapes contained in `instructionsLightshow.json`. 
 
 ### Requirements I
 
-Lights in your grid are numbered from 0 to 49 horizontally and from 0 to 25 vertically. Santa's instructions include whether to turn on, turn off, or toggle various inclusive ranges given as coordinate pairs. Each coordinate pair represents opposite corners of a rectangle, inclusive; a coordinate pair like 0,0 through 2,2 therefore refers to 9 lights in a 3x3 square. The lights all start turned off.
+Lights in your grid are numbered from 0 to 49 horizontally and from 0 to 24 vertically. Santa's instructions include whether to turn on, turn off, or toggle various inclusive ranges given as coordinate pairs. Each coordinate pair represents opposite corners of a rectangle, inclusive; a coordinate pair like 0,0 through 2,2 therefore refers to 9 lights in a 3x3 square. The lights all start turned off.
 
 #### Examples
 
-- `turn on 0,0 through 49,24` would turn on (or leave on) every light.
+- `turn on 0,0 through 49,24` would turn on (or leave on) every light and translate into json as follows: 
+
+[
+    {
+      "coords": [
+        [0, 0],
+        [49, 24]
+      ],
+      "type": "on"
+    },
+]
+
+
 - `toggle 0,0 through 49,0` would toggle the first line of 50 lights, turning off the ones that were on, and turning on the ones that were off.
+
+- possible values for the "type" key are "on", "off" and "toggle"
 
 ### Requirements II
 
