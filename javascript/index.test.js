@@ -5,3 +5,8 @@ test('light starts off', () => {
 
     expect(light.on).toBe(false);
 });
+
+test('', () => {
+    const grid = [][]
+
+})
